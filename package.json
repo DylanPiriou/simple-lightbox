@@ -7,6 +7,11 @@
 		"dist/**",
 		"README.md"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DylanPiriou/simple-lightbox.git"
+	},
+	"homepage": "https://github.com/DylanPiriou/simple-lightbox",
 	"scripts": {
 		"build": "webpack",
 		"test": "echo \"Error: no test specified\" && exit 1"
