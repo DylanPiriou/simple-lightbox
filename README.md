@@ -1,6 +1,10 @@
-# Getting Started
+# @dylanpiriou/simple-lightbox
 
-Install this package:
+A simple and accessible lightbox component for React.
+
+## Installation
+
+Install this package using npm:
 
 ```shell
 npm install @dylanpiriou/simple-lightbox
@@ -13,3 +17,27 @@ import { Lightbox } from "@dylanpiriou/simple-lightbox";
 ```
 
 You can then render the `Lightbox` component like any other React component in JSX.
+
+```js
+const [showLightbox, setShowLightbox] = useState(false);
+{showLightbox && (
+	<Lightbox>
+		<h2 className="pb-2 text-2xl lg:text-3xl font-semibold">
+			Employee created !
+		</h2>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing
+		    elit. Quo placeat omnis officia eos temporibus eum
+			aspernatur soluta, quaerat, quia sit dolore quod
+			nostrum. Perspiciatis voluptas quaerat voluptatem,
+			totam accusamus cumque facilis vel nemo veniam est
+			sapiente perferendis porro fugit expedita amet
+			facere tenetur quia doloribus ad? Deleniti
+			voluptatem alias consequuntur!
+		</p>
+	</Lightbox>
+)}
+```
+## Props
+
+children: The content to be displayed inside the lightbox. This can be any valid React node, such as elements, strings, or fragments.

@@ -1,6 +1,6 @@
 {
 	"name": "@dylanpiriou/simple-lightbox",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A simple lightbox component for React",
 	"main": "dist/bundle.js",
 	"files": [
