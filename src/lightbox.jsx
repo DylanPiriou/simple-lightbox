@@ -6,36 +6,25 @@ import "./index.css";
 /**
  * Lightbox component that displays a modal with a close button.
  */
-export function Lightbox({ children }) {
-	
-	/**
-	 * Closes the lightbox by setting the showLightbox state to false.
-	 */
-	const [showLightbox, setShowLightbox] = useState(true);
-	const closeLightbox = () => {
-		setShowLightbox(false);
-	};
+export function Lightbox({ show, onClose, children }) {
+	// If the show prop is false, return null.
+	if (!show) {
+		return null;
+	}
 
+	// Render the lightbox.
 	return (
-		<React.Fragment>
-			{showLightbox && (
+		<div role="lightbox" aria-hidden="true" className="lightbox-overlay">
+			<dialog className="lightbox-dialog" role="dialog">
 				<div
-					role="lightbox"
-					aria-hidden="true"
-					className="lightbox-overlay"
+					className="lightbox-close"
+					aria-label="close lightbox"
+					onClick={onClose}
 				>
-					<dialog className="lightbox-dialog" role="dialog">
-						<div
-							className="lightbox-close"
-							aria-label="close lightbox"
-							onClick={() => closeLightbox()}
-						>
-							<X />
-						</div>
-						<div className="lightbox-content">{children}</div>
-					</dialog>
+					<X />
 				</div>
-			)}
-		</React.Fragment>
+				<div className="lightbox-content">{children}</div>
+			</dialog>
+		</div>
 	);
 }
